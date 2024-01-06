@@ -185,7 +185,7 @@ h1 {
     }
   }
 .ikigAiButton--disabled {
-    /* opacity: 0; */
+    opacity: 0;
 }
 .ikigAiButton--disabled:hover {
     cursor: default;
@@ -204,7 +204,7 @@ h1 {
     border-radius: 0;
     position: absolute;
     width: 74vw;
-    height: 94vh;
+    height: calc( 100vh - 6vw) ;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
