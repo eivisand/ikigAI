@@ -148,6 +148,9 @@ h1 {
     width: min( 10vw, 10vh);
     height: min( 10vw, 10vh);
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -157,7 +160,7 @@ h1 {
     animation-direction: normal;
     animation-timing-function: linear;
     font-weight: bold;
-    font-size: min(2vw, 2vh);
+    font-size: min(3vw, 3vh);
     text-align: center;
 }
 
@@ -182,7 +185,7 @@ h1 {
     }
   }
 .ikigAiButton--disabled {
-    opacity: 0;
+    /* opacity: 0; */
 }
 .ikigAiButton--disabled:hover {
     cursor: default;
