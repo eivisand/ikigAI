@@ -1,0 +1,242 @@
+:root {
+    --paletteOne: #f5b5fc;
+    --paletteTwo: #96f7d2;
+    --paletteThree: rgb(255, 250, 68);
+    --paletteFour: #fcb1b1;
+    --paletteBackground: #282c34;
+    --paletteBackgroundTwo: #fafafa;
+    --paletteBackgroundThree: #505050;
+}
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--paletteBackground);
+    font-family: 'Courier New', Courier, monospace;
+
+}
+.app {
+    width: 100%;
+    height: 100%;
+    isolation: isolate;
+}
+
+.area {
+    border-radius: 50%;
+    border: 3px solid var(--paletteBackgroundTwo);
+    color: var(--paletteBackground);
+    width: 45vw;
+    height: 45vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    mix-blend-mode: multiply;
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out, transform 0.5s ease-in-out, opacity 0.5s ease-in-out, top 0.5s ease-in-out, left 0.5s ease-in-out, border-radius 0.5s ease-in-out;
+}
+.area:nth-child(1) {
+    background-color: var(--paletteOne);
+    transform: translate(-50%, -90%);
+}
+.area:nth-child(2) {
+    background-color: var(--paletteTwo);
+    transform: translate(-90%, -50%);
+}
+.area:nth-child(3) {
+    background-color: var(--paletteThree);
+    transform: translate(-10%, -50%);
+}
+.area:nth-child(4) {
+    background-color: var(--paletteFour);
+    transform: translate(-50%, -10%);
+}
+.area.area--selected {
+    border: 3vw solid var(--paletteBackgroundTwo);
+    border-radius: 0;
+    position: absolute;
+    width: 94vw;
+    height: 94vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.area--background {
+    height: 0;
+    width: 0;
+    opacity: 0;
+}
+.area--background h1 {
+    display: none;
+}
+h1 {
+    transition: font-size 0.5s ease-in-out;
+}
+.area--selected h1 {
+    font-size: 3rem;
+}
+.questionaireLabel, .questionaireInput, .areaButton {
+   display: none;
+   margin-bottom: 2vh;
+}
+.questionaireInput {
+    background-color: var(--paletteBackground);
+    color: var(--paletteBackgroundTwo);
+    border: .4vh solid var(--paletteBackground);
+    border-radius: .4vh;
+    height: 40vh;
+    width: 70vw;
+    padding: .5vh;
+    box-sizing: border-box;
+    font-size: 2rem;
+}
+.button {
+    background-color: var(--paletteBackground);
+    color: var(--paletteBackgroundTwo);
+    border: .4vh solid var(--paletteBackground);
+    border-radius: .4vh;
+    height: 5vh;
+    width: 70vw;
+    padding: .5vh;
+    font-size: 2vh;
+    font-weight: bold;
+}
+.button:hover {
+    cursor: pointer;
+}
+.button:active {
+    background-color: var(--paletteBackgroundTwo);
+    border: .4vh solid var(--paletteBackgroundTwo);
+    color: var(--paletteBackground);
+    transform: translate(-.2vh, -.2vh);
+}
+.button.button--copy {
+    background-color: var(--paletteBackgroundTwo);
+    color: var(--paletteBackground);
+    border: .4vh solid var(--paletteBackground);
+}
+.button.button--copy:active {
+    background-color: var(--paletteBackground);
+    color: var(--paletteBackgroundTwo);
+    transform: translate(-.2vh, -.2vh);
+}
+.button.button--reset {
+    background-color: var(--paletteBackgroundThree);
+    color: var(--paletteBackground);
+    border: .4vh solid var(--paletteBackgroundThree);
+    position: absolute;
+    top:  0;
+    right: 0;
+    width: auto;
+
+}
+
+.area--selected .questionaireLabel, .area--selected .questionaireInput, .area--selected .areaButton  {
+    display: block;
+}
+
+.ikigAiButton {
+    border-radius: 50%;
+    background-image: linear-gradient(red, yellow);
+    border: none;
+    color: var(--paletteBackground);
+    width: 10vw;
+    height: 10vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-duration: 2s;
+    animation-name: colorGradient;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+    font-weight: bold;
+}
+.ikigAiButton:hover {
+    cursor: pointer;
+}
+
+@keyframes colorGradient {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      filter: hue-rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+      filter: hue-rotate(180deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+      filter: hue-rotate(360deg);
+    }
+  }
+.ikigAiButton--disabled {
+    opacity: 0;
+}
+.ikigAiButton--disabled:hover {
+    cursor: default;
+}
+
+.ikigAiSection {
+    opacity: 0;
+    display: none;
+}
+
+.ikigAiSection--active {
+    opacity: 100%;
+    display: flex;
+    border: 3vw solid var(--paletteBackgroundTwo);
+    color: var(--paletteBackgroundTwo);
+    border-radius: 0;
+    position: absolute;
+    width: 74vw;
+    height: 94vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s ease-in-out;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.notification {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 5vh;
+    padding: 3vw;
+    background-color: var(--paletteBackground);
+    color: var(--paletteBackgroundTwo);
+    border-radius: .3vh;
+    border: .3vh solid var(--paletteBackgroundTwo);
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 2vh;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    display: flex;
+}
+
+.notification--hidden {
+    opacity: 0;
+    display: hidden;
+}
+.notification--gone {
+    opacity: 0;
+    display: none;
+}
