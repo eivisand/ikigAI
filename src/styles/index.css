@@ -6,8 +6,8 @@
     --paletteBackground: #282c34;
     --paletteBackgroundTwo: #fafafa;
     --paletteBackgroundThree: #505050;
-    --diameter: min(45vh, 45vw);
 }
+
 .background {
     position: absolute;
     top: 0;
@@ -42,21 +42,22 @@
     mix-blend-mode: multiply;
     transition: width 0.5s ease-in-out, height 0.5s ease-in-out, transform 0.5s ease-in-out, opacity 0.5s ease-in-out, top 0.5s ease-in-out, left 0.5s ease-in-out, border-radius 0.5s ease-in-out;
 }
+
 .area:nth-child(1) {
     background-color: var(--paletteOne);
-    transform: translate(calc(50vw - calc( var(--diameter) / 2 )), calc(50vh - calc( var(--diameter) * 9 / 10 )));
+    transform: translate(calc(50 * var(--vw) - calc( var(--diameter) / 2 )), calc(50 * var(--vh) - calc( var(--diameter) * 9 / 10 )));
 }
 .area:nth-child(2) {
     background-color: var(--paletteTwo);
-    transform: translate(calc(50vw - calc( var(--diameter) * 9 / 10 )), calc(50vh - calc( var(--diameter) / 2 )));
+    transform: translate(calc(50 * var(--vw) - calc( var(--diameter) * 9 / 10 )), calc(50 * var(--vh) - calc( var(--diameter) / 2 )));
 }
 .area:nth-child(3) {
     background-color: var(--paletteThree);
-    transform: translate(calc(50vw - calc( var(--diameter) * 1 / 10 )), calc(50vh - calc( var(--diameter) / 2 )));
+    transform: translate(calc(50 * var(--vw) - calc( var(--diameter) * 1 / 10 )), calc(50 * var(--vh) - calc( var(--diameter) / 2 )));
 }
 .area:nth-child(4) {
     background-color: var(--paletteFour);
-    transform: translate(calc(50vw - calc( var(--diameter) / 2 )), calc(50vh - calc( var(--diameter) * 1 / 10 )));
+    transform: translate(calc(50 * var(--vw) - calc( var(--diameter) / 2 )), calc(50 * var(--vh) - calc( var(--diameter) * 1 / 10 )));
 }
 .area.area--selected {
     border: 3vw solid var(--paletteBackgroundTwo);

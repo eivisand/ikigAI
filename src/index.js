@@ -122,9 +122,12 @@ let vw = window.innerWidth * 0.01;
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vw', `${vw}px`);
 document.documentElement.style.setProperty('--vh', `${vh}px`);
+document.documentElement.style.setProperty('--diameter', `${Math.min(45*vw, 45*vh)}px`);
+
 window.addEventListener('resize', () => {
     let vw = window.innerWidth * 0.01;
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vw', `${vw}px`);
     document.documentElement.style.setProperty('--vh', `${vh}px`);
+    document.documentElement.style.setProperty('--diameter', `${Math.min(45*vw, 45*vh)}px`);
   });
