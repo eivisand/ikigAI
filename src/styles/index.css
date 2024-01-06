@@ -62,8 +62,8 @@
     border: 3vw solid var(--paletteBackgroundTwo);
     border-radius: 0;
     position: absolute;
-    width: 94vw;
-    height: 94vh;
+    width: calc( 94 * var(--vw));
+    height: calc(var(--vh) * 100 - 6 * var(--vw));
     transform: translate(0vw, 0vh);
 }
 .area--background {
@@ -128,7 +128,7 @@ h1 {
 .button.button--reset {
     background-color: var(--paletteBackgroundThree);
     color: var(--paletteBackground);
-    border: .4vh solid var(--paletteBackgroundThree);
+    border: calc(var(--vh) * .4) solid var(--paletteBackgroundThree);
     position: absolute;
     top:  0;
     right: 0;
@@ -145,8 +145,8 @@ h1 {
     background-image: linear-gradient(red, yellow);
     border: none;
     color: var(--paletteBackground);
-    width: min( 10vw, 10vh);
-    height: min( 10vw, 10vh);
+    width: min( 10 * var(--vw), var(--vh) * 10);
+    height: min( 10 * var(--vw), var(--vh) * 10);
     position: absolute;
     display: flex;
     align-items: center;
@@ -203,14 +203,14 @@ h1 {
     color: var(--paletteBackgroundTwo);
     border-radius: 0;
     position: absolute;
-    width: 74vw;
-    height: calc( 100vh - 6vw) ;
+    width: calc( 74 * var(--vw) );
+    height: calc( var(--vh) * 100 - var(--vw) * 6 );
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     transition: opacity 0.5s ease-in-out;
-    padding-left: 10vw;
-    padding-right: 10vw;
+    padding-left: calc(10 * var(--vw));
+    padding-right: calc(10 * var(--vw));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -221,16 +221,16 @@ h1 {
     position: absolute;
     top: 0;
     right: 0;
-    height: 5vh;
+    height: calc(var(--vh) * 5);
     padding: 3vw;
     background-color: var(--paletteBackground);
     color: var(--paletteBackgroundTwo);
-    border-radius: .3vh;
-    border: .3vh solid var(--paletteBackgroundTwo);
+    border-radius: calc(var(--vh) * 0.3);
+    border: calc(var(--vh) * 0.3) solid var(--paletteBackgroundTwo);
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    font-size: 2vh;
+    font-size: calc(var(--vh) * 2);
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
     display: flex;

@@ -37,7 +37,6 @@ const startArea = (areaId) => {
 }
 
 const done = (event, event2) => {
-    console.log("calling done", event, event2);
     const areas = document.querySelectorAll(".area");
     areas.forEach(area => {
         area.classList.remove("area--background");
@@ -117,3 +116,15 @@ const registerListeners = () => {
 }
 
 registerListeners();
+
+//fix vh and vw on mobile
+let vw = window.innerWidth * 0.01;
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vw', `${vw}px`);
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+window.addEventListener('resize', () => {
+    let vw = window.innerWidth * 0.01;
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vw', `${vw}px`);
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  });
