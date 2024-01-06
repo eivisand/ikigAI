@@ -6,6 +6,7 @@
     --paletteBackground: #282c34;
     --paletteBackgroundTwo: #fafafa;
     --paletteBackgroundThree: #505050;
+    --diameter: min(45vh, 45vw);
 }
 .background {
     position: absolute;
@@ -29,8 +30,8 @@
     border-radius: 50%;
     border: 3px solid var(--paletteBackgroundTwo);
     color: var(--paletteBackground);
-    width: 45vw;
-    height: 45vw;
+    width: var(--diameter);
+    height: var(--diameter);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -148,7 +149,9 @@ h1 {
     border: none;
     color: var(--paletteBackground);
     width: 10vw;
+    max-width: 10vh;
     height: 10vw;
+    max-height: 10vh;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -159,6 +162,7 @@ h1 {
     animation-direction: normal;
     animation-timing-function: linear;
     font-weight: bold;
+    font-size: min(3vw, 3vh);
 }
 .ikigAiButton:hover {
     cursor: pointer;
