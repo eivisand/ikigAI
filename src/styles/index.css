@@ -160,7 +160,9 @@ h1 {
     animation-timing-function: linear;
     font-weight: bold;
     font-size: min(3vw, 3vh);
+    text-align: center;
 }
+
 .ikigAiButton:hover {
     cursor: pointer;
 }
