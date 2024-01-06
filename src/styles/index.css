@@ -145,10 +145,8 @@ h1 {
     background-image: linear-gradient(red, yellow);
     border: none;
     color: var(--paletteBackground);
-    width: 10vw;
-    max-width: 10vh;
-    height: 10vw;
-    max-height: 10vh;
+    width: min( 10vw, 10vh);
+    height: min( 10vw, 10vh);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -159,7 +157,7 @@ h1 {
     animation-direction: normal;
     animation-timing-function: linear;
     font-weight: bold;
-    font-size: min(3vw, 3vh);
+    font-size: min(2vw, 2vh);
     text-align: center;
 }
 
